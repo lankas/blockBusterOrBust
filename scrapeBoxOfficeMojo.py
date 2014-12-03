@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup
 
 def getMovieList():
 	movies = open("movies.txt", "r")
-	movieList = [movie.strip('\n') for movie in movies]
+	movieAndDateList = [movie.strip('\n') for movie in movies]
+	movieList = [movie.split("|")[1] for movie in movieAndDateList]
 	return movieList
 
 def getMovieRevenues():

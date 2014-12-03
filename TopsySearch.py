@@ -12,8 +12,15 @@ def search(query, page=1, perpage=100):
   res = o['response']
   return res
 
-def string_to_date(dateString):
+def get_movies_and_dates():
+  movieList = getMovieList()
+  f = open("movies.txt", "r")
+  movieAndDateList = [movie.strip('\n') for movie in f]
+  dateList = [movie.split("|")[0] for movie in movieAndDateList]
+  return zip(movieList, dateList);
 
+def string_to_date(dateString):
+  pass
 
 def get_all_tweets(movie):
   all_tweets = []
@@ -30,9 +37,9 @@ def dump_to_file(obj, outfile):
 
  
 if __name__ == "__main__":
-  movieList = getMovieList()
+  moviesAndDates = get_movies_and_dates()
   all_movie_data = []
-  for movie in movieList:
+  for movie,date in movieList:
     print movie
     tweets = get_all_tweets(movie)
     all_movie_data.extend([{movie:tweet} for tweet in tweets])
