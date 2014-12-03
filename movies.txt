@@ -1,143 +1,143 @@
-1/3/2014|Paranormal Activity: The Marked Ones
-1/8/2014|Yves Saint Laurent
-1/10/2014|The Legend of Hercules
-1/11/2014|The Nut Job
-1/15/2014|Jack Ryan: Shadow Recruit
-1/17/2014|Camp X-Ray
-1/17/2014|Devil's Due
-1/17/2014|Frank
-1/17/2014|The Guest
-1/17/2014|Hellion
-1/17/2014|Laggies
-1/17/2014|Ride Along
-1/18/2014|Alive Inside
-1/18/2014|Dear White People
-1/18/2014|I Origins
-1/18/2014|Love Is Strange
-1/18/2014|Wish I Was Here
-1/19/2014|Boyhood
-1/21/2014|The Raid 2
-1/22/2014|The Signal
-1/24/2014|I Frankenstein
-1/24/2014|Jai Ho
-1/27/2014|Non-Stop
-1/27/2014|That Awkward Moment
-1/30/2014|RoboCop
-2/1/2014|The Lego Movie
-2/2/2014|Barefoot
-2/5/2014|The Monuments Men
-2/7/2014|Mr. Peabody & Sherman
-2/7/2014|Vampire Academy
-2/11/2014|About Last Night
-2/12/2014|3 Days to Kill
-2/12/2014|Cesar Chavez
-2/13/2014|Winter's Tale
-2/14/2014|Endless Love
-2/18/2014|Pompeii
-2/22/2014|Vengeance
-2/28/2014|Repentance
-2/28/2014|Son of God
-3/4/2014|300: Rise of an Empire
-3/6/2014|The Grand Budapest Hotel
-3/7/2014|Chef
-3/8/2014|Neighbors
-3/10/2014|Noah
-3/11/2014|Muppets Most Wanted
-3/12/2014|Need for Speed
-3/13/2014|Captain America: The Winter Soldier
-3/14/2014|Better Living Through Chemistry
-3/14/2014|The Single Moms Club
-3/14/2014|Veronica Mars
-3/18/2014|Divergent
-3/19/2014|Sabotage
-3/20/2014|Rio 2
-3/21/2014|God's Not Dead
-4/7/2014|Draft Day
-4/10/2014|The Quiet Ones
-4/10/2014|Transcendence
-4/16/2014|The Amazing Spider-Man 2
-4/16/2014|Heaven Is for Real
-4/17/2014|The Other Woman
-4/18/2014|2 States
-4/18/2014|Bears
-4/18/2014|A Haunted House 2
-4/19/2014|Next Goal Wins
-4/23/2014|Brick Mansions
-5/2/2014|Walk of Shame
-5/6/2014|Million Dollar Arm
-5/8/2014|Godzilla
-5/9/2014|Moms' Night Out
-5/10/2014|X-Men: Days of Future Past
-5/16/2014|How to Train Your Dragon 2
-5/16/2014|The Fault in Our Stars
-5/18/2014|The Rover
-5/19/2014|Foxcatcher
-5/23/2014|Blended
-5/28/2014|Edge of Tomorrow
-5/28/2014|Maleficent
-5/30/2014|A Million Ways to Die in the West
-6/4/2014|22 Jump Street
-6/5/2014|Jersey Boys
-6/6/2014|Holiday
-6/14/2014|Earth to Echo
-6/19/2014|Transformers: Age of Extinction
-6/20/2014|Think Like a Man Too
-6/26/2014|Dawn of the Planet of the Apes
-6/27/2014|The Breakup Guru
-6/27/2014|Ek Villain
-7/2/2014|Deliver Us from Evil
-7/2/2014|Tammy
-7/15/2014|Planes: Fire & Rescue
-7/18/2014|Persecuted
-7/18/2014|The Purge: Anarchy
-7/18/2014|Sex Tape
-7/21/2014|Guardians of the Galaxy
-7/25/2014|And So It Goes
-7/25/2014|The Fluffy Movie
-7/25/2014|Hercules
-7/25/2014|Kick
-7/25/2014|Lucy
-7/25/2014|Magic in the Moonlight
-7/29/2014|Teenage Mutant Ninja Turtles
-8/1/2014|Get On Up
-8/4/2014|The Expendables 3
-8/8/2014|The Hundred-Foot Journey
-8/8/2014|Into the Storm
-8/8/2014|Step Up: All In
-8/11/2014|The Giver
-8/13/2014|Let's Be Cops
-8/14/2014|Anjaan
-8/15/2014|Hector and the Search for Happiness
-8/15/2014|Singham Returns
-8/22/2014|If I Stay
-8/22/2014|The One I Love
-8/22/2014|Sin City: A Dame to Kill For
-8/22/2014|When the Game Stands Tall
-8/27/2014|Birdman
-8/27/2014|The November Man
-8/28/2014|The Two Faces of January
-8/31/2014|The Boxtrolls
-9/4/2014|Before I Go to Sleep
-9/5/2014|The Identical
-9/5/2014|Mary Kom
-9/5/2014|Nightcrawler
-9/12/2014|Dolphin Tale 2
-9/12/2014|The Drop
-9/12/2014|No Good Deed
-9/19/2014|The Maze Runner
-9/19/2014|This Is Where I Leave You
-9/19/2014|Tusk
-9/19/2014|A Walk Among the Tombstones
-9/25/2014|Finding Fanny
-9/26/2014|The Equalizer
-9/27/2014|Rosewater
-9/27/2014|The Good Lie
-9/27/2014|The Imitation Game
-9/27/2014|The Theory of Everything
-10/2/2014|Bang Bang
-10/3/2014|Annabelle
-10/3/2014|Gone Girl
-10/3/2014|Left Behind
+01/03/2014|Paranormal Activity: The Marked Ones
+01/08/2014|Yves Saint Laurent
+01/10/2014|The Legend of Hercules
+01/11/2014|The Nut Job
+01/15/2014|Jack Ryan: Shadow Recruit
+01/17/2014|Camp X-Ray
+01/17/2014|Devil's Due
+01/17/2014|Frank
+01/17/2014|The Guest
+01/17/2014|Hellion
+01/17/2014|Laggies
+01/17/2014|Ride Along
+01/18/2014|Alive Inside
+01/18/2014|Dear White People
+01/18/2014|I Origins
+01/18/2014|Love Is Strange
+01/18/2014|Wish I Was Here
+01/19/2014|Boyhood
+01/21/2014|The Raid 2
+01/22/2014|The Signal
+01/24/2014|I Frankenstein
+01/24/2014|Jai Ho
+01/27/2014|Non-Stop
+01/27/2014|That Awkward Moment
+01/30/2014|RoboCop
+02/01/2014|The Lego Movie
+02/02/2014|Barefoot
+02/05/2014|The Monuments Men
+02/07/2014|Mr. Peabody & Sherman
+02/07/2014|Vampire Academy
+02/11/2014|About Last Night
+02/12/2014|3 Days to Kill
+02/12/2014|Cesar Chavez
+02/13/2014|Winter's Tale
+02/14/2014|Endless Love
+02/18/2014|Pompeii
+02/22/2014|Vengeance
+02/28/2014|Repentance
+02/28/2014|Son of God
+03/04/2014|300: Rise of an Empire
+03/06/2014|The Grand Budapest Hotel
+03/07/2014|Chef
+03/08/2014|Neighbors
+03/10/2014|Noah
+03/11/2014|Muppets Most Wanted
+03/12/2014|Need for Speed
+03/13/2014|Captain America: The Winter Soldier
+03/14/2014|Better Living Through Chemistry
+03/14/2014|The Single Moms Club
+03/14/2014|Veronica Mars
+03/18/2014|Divergent
+03/19/2014|Sabotage
+03/20/2014|Rio 2
+03/21/2014|God's Not Dead
+04/07/2014|Draft Day
+04/10/2014|The Quiet Ones
+04/10/2014|Transcendence
+04/16/2014|The Amazing Spider-Man 2
+04/16/2014|Heaven Is for Real
+04/17/2014|The Other Woman
+04/18/2014|2 States
+04/18/2014|Bears
+04/18/2014|A Haunted House 2
+04/19/2014|Next Goal Wins
+04/23/2014|Brick Mansions
+05/02/2014|Walk of Shame
+05/06/2014|Million Dollar Arm
+05/08/2014|Godzilla
+05/09/2014|Moms' Night Out
+05/10/2014|X-Men: Days of Future Past
+05/16/2014|How to Train Your Dragon 2
+05/16/2014|The Fault in Our Stars
+05/18/2014|The Rover
+05/19/2014|Foxcatcher
+05/23/2014|Blended
+05/28/2014|Edge of Tomorrow
+05/28/2014|Maleficent
+05/30/2014|A Million Ways to Die in the West
+06/04/2014|22 Jump Street
+06/05/2014|Jersey Boys
+06/06/2014|Holiday
+06/14/2014|Earth to Echo
+06/19/2014|Transformers: Age of Extinction
+06/20/2014|Think Like a Man Too
+06/26/2014|Dawn of the Planet of the Apes
+06/27/2014|The Breakup Guru
+06/27/2014|Ek Villain
+07/02/2014|Deliver Us from Evil
+07/02/2014|Tammy
+07/15/2014|Planes: Fire & Rescue
+07/18/2014|Persecuted
+07/18/2014|The Purge: Anarchy
+07/18/2014|Sex Tape
+07/21/2014|Guardians of the Galaxy
+07/25/2014|And So It Goes
+07/25/2014|The Fluffy Movie
+07/25/2014|Hercules
+07/25/2014|Kick
+07/25/2014|Lucy
+07/25/2014|Magic in the Moonlight
+07/29/2014|Teenage Mutant Ninja Turtles
+08/01/2014|Get On Up
+08/04/2014|The Expendables 3
+08/08/2014|The Hundred-Foot Journey
+08/08/2014|Into the Storm
+08/08/2014|Step Up: All In
+08/11/2014|The Giver
+08/13/2014|Let's Be Cops
+08/14/2014|Anjaan
+08/15/2014|Hector and the Search for Happiness
+08/15/2014|Singham Returns
+08/22/2014|If I Stay
+08/22/2014|The One I Love
+08/22/2014|Sin City: A Dame to Kill For
+08/22/2014|When the Game Stands Tall
+08/27/2014|Birdman
+08/27/2014|The November Man
+08/28/2014|The Two Faces of January
+08/31/2014|The Boxtrolls
+09/04/2014|Before I Go to Sleep
+09/05/2014|The Identical
+09/05/2014|Mary Kom
+09/05/2014|Nightcrawler
+09/12/2014|Dolphin Tale 2
+09/12/2014|The Drop
+09/12/2014|No Good Deed
+09/19/2014|The Maze Runner
+09/19/2014|This Is Where I Leave You
+09/19/2014|Tusk
+09/19/2014|A Walk Among the Tombstones
+09/25/2014|Finding Fanny
+09/26/2014|The Equalizer
+09/27/2014|Rosewater
+09/27/2014|The Good Lie
+09/27/2014|The Imitation Game
+09/27/2014|The Theory of Everything
+10/02/2014|Bang Bang
+10/03/2014|Annabelle
+10/03/2014|Gone Girl
+10/03/2014|Left Behind
 10/10/2014|Addicted
 10/10/2014|Alexander and the Terrible Horrible No Good Very Bad Day
 10/10/2014|Dracula Untold
@@ -149,8 +149,8 @@
 10/24/2014|John Wick
 10/24/2014|Ouija
 10/24/2014|St. Vincent
-11/5/2014|Interstellar
-11/7/2014|Big Hero 6
+11/05/2014|Interstellar
+11/07/2014|Big Hero 6
 11/14/2014|Beyond the Lights
 11/14/2014|Dumb and Dumber To
 11/14/2014|Saving Christmas
