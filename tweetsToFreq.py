@@ -8,19 +8,24 @@
 
 import numpy as np
 import json
+import sys
+from datetime import datetime
 
 #each movie has a json - dictionary is date and text
 
 #these things will  be arguments potentially
-releaseTime
-tweetsFile
+sys.argv[1] = releaseTime
+sys.argv[2] = tweetsFile
+
+def tweetsToFreq
 
 
 with open(tweetsFile) as json_data:
     tweets = json.loads(json_data)
-    pprint(d)
 
 for tweet in tweets
-    tweet.time #unix  
+    print tweet.time #unix
+    print datetime.fromtimestamp(tweet.time)
+    #use this value to place in the right vector postion
 
 np.savetxt("freqMovies.data", freq_vect, delimiter=",")
