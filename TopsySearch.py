@@ -1,6 +1,8 @@
 # scrape tweets from topsy.com
  
 import sys, urllib, urllib2, json, random
+from scrapeBoxOfficeMojo import getMovieList
+
  
 def search(query, page=1, perpage=100):
   data = {'q': query, 'type': 'tweet', 'page': page, 'perpage': perpage, 'window': 'a', 'sort_method': "-date", 'apikey': '09C43A9B270A470B8EB8F2946A9369F3', "mintime":1414792811, "maxtime":1417125633}
@@ -9,6 +11,8 @@ def search(query, page=1, perpage=100):
   o = json.loads(data.read())
   res = o['response']
   return res
+
+def string_to_date(dateString):
 
 
 def get_all_tweets(movie):
@@ -26,11 +30,11 @@ def dump_to_file(obj, outfile):
 
  
 if __name__ == "__main__":
-  try: tanya = str(sys.argv[1])
-  except: print "python " + sys.argv[0] + " <query keyword>"
-  print "> Querying for", tanya
-  res = search(tanya)
-  print "> Total fetched:", str(res['total'])
-  print "> Here is the preview:"
-  for i in res['list'][:1000]:
-    print "-->", i['firstpost_date'], i['title']
+  movieList = getMovieList()
+  all_movie_data = []
+  for movie in movieList:
+    print movie
+    tweets = get_all_tweets(movie)
+    all_movie_data.extend([{movie:tweet} for tweet in tweets])
+
+  dump_to_file(all_movie_data, "movie_tweet_data")
