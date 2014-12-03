@@ -1,5 +1,31 @@
+import json
 import requests
 from bs4 import BeautifulSoup
+
+def toJSON(filename):
+	with open(filename, 'w') as outfile:
+		json.dump(classify(), outfile)
+
+def classify():
+	movieRevenue = getMovieRevenues()
+	values = movieRevenue.values()
+	values.sort()
+	l = len(values) / 3
+	first = values[l]
+	second = values[2*l]
+
+	for key in movieRevenue.keys():
+		v = movieRevenue[key]
+		if (v < first):
+			c = 0
+		elif (v < second):
+			c = 1
+		else:
+			c = 2
+		movieRevenue[key] = c
+	#print movieRevenue
+	return movieRevenue
+
 
 def getMovieList():
 	movies = open("movies.txt", "r")
@@ -13,6 +39,19 @@ def getMovieRevenues():
 	for movie in movies:
 		revenue = scrape(movie)
 		movieRevenue[movie] = revenue
+	movieRevenue['The Nut Job'] = 19423000
+	movieRevenue['Frank'] = 16056
+	movieRevenue['Ride Along'] = 41516170
+	movieRevenue['The Lego Movie'] = 69050279
+	movieRevenue['Divergent'] = 54607747
+	movieRevenue['Brick Mansions'] = 9516855
+	movieRevenue['Godzilla'] = 93188384
+	movieRevenue['Holiday'] = 394797
+	movieRevenue['Guardians of the Galaxy'] = 94320883
+	movieRevenue['Teenage Mutant Ninja Turtles'] = 65575105
+	movieRevenue['The Maze Runner'] = 32512804
+	movieRevenue['Left Behind'] = 6300147
+	movieRevenue['Fury'] = 23702421
 	return movieRevenue
 
 def createUrl(search):
@@ -22,7 +61,7 @@ def createUrl(search):
 	return url
 
 def scrapeUrl(url):
-	print url
+	#print url
 	try:
 		req = requests.get(url)
 	except:
@@ -39,7 +78,7 @@ def scrapeUrl(url):
 	td = [i for i in tr.children][9] #is this consistent?
 	amount = td.text
 	amount = amount[1:].replace(",","")
-	print amount
+	#print amount
 	amt = int(amount)
 	return amt
 
