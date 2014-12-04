@@ -15,9 +15,9 @@ def search(query, page=1, perpage=100, maxtime=None):
   res = o['response']
   return res
 
-def get_movies_and_dates():
+def get_movies_and_dates(infile):
   movieList = getMovieList()
-  f = open("movies.txt", "r")
+  f = open(infile, "r")
   movieAndDateList = [movie.strip('\n') for movie in f]
   dateList = [movie.split("|")[0] for movie in movieAndDateList]
   locale.setlocale(locale.LC_ALL, '')
@@ -38,11 +38,17 @@ def dump_to_file(obj, outfile):
   o.close()
  
 if __name__ == "__main__":
-  moviesAndDates = get_movies_and_dates()
+  try: outfile = str(sys.argv[2])
+  except: print "python " + sys.argv[0] + " <query keyword>"
+
+  try: infile = str(sys.argv[1])
+  except: print "python " + sys.argv[0] + " <query keyword>"
+
+  moviesAndDates = get_movies_and_dates(infile)
   all_movie_data = []
   for movie,date in moviesAndDates:
     print movie
     tweets = get_all_tweets(movie, date)
     all_movie_data.extend([{movie:tweet} for tweet in tweets])
 
-  dump_to_file(all_movie_data, "movie_tweet_data2")
+  dump_to_file(all_movie_data, outfile)
