@@ -40,9 +40,9 @@ def dump_to_file(obj, outfile):
 if __name__ == "__main__":
   moviesAndDates = get_movies_and_dates()
   all_movie_data = []
-  for movie,date in movieList:
+  for movie,date in moviesAndDates:
     print movie
     tweets = get_all_tweets(movie, date)
     all_movie_data.extend([{movie:tweet} for tweet in tweets])
 
-  dump_to_file(all_movie_data, "movie_tweet_data")
+  dump_to_file(all_movie_data, "movie_tweet_data2")
