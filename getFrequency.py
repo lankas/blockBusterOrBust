@@ -26,7 +26,17 @@ def getfreq(movie, releaseDate):
   #return searchhistcounts(movie, days)['histogram'][diff.days:]
   counts = searchhistcounts(movie, days)['histogram'][diff.days:]
   return counts
- 
+  
+
+def get_movies_and_dates(infile):
+  movieList = getMovieList()
+  f = open(infile, "r")
+  movieAndDateList = [movie.strip('\n') for movie in f]
+  dateList = [movie.split("|")[0] for movie in movieAndDateList]
+  locale.setlocale(locale.LC_ALL, '')
+  dateList = [datetime.strptime(date,"%x") for date in dateList]
+  return zip(movieList, dateList);
+
 
 def get_all_counts(infile):
   moviesAndDates = get_movies_and_dates(infile)
@@ -44,4 +54,4 @@ def dump_to_file(obj, outfile):
 
 def getFrequencies():
   frequencies = get_all_counts("movies.txt")
-  dump_to_file(frequencies, "freqs.txt")
+  dump_to_file(frequencies, "freqTwoWeeks.txt")
