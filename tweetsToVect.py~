@@ -97,7 +97,7 @@ print pos_freqs
 print neg_freqs
 print ratios
 
-np.savetxt('sentout.txt', movie_key,freqs,pos_freqs,neg_freqs,ratios)
+np.savetxt
   
 #for movie in allMovies[0:50]:
 
