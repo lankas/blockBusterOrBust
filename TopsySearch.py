@@ -8,11 +8,11 @@ from dateToTimestamp import get_older_date
  
 def search(query, page=1, perpage=100, maxtime=None, mintime=None):
   if (maxtime is not None) and (mintime is not None):
-    data = {'q': query, 'type': 'tweet', 'page': page, 'perpage': perpage, 'sort_method': "-date", 'apikey': '09C43A9B270A470B8EB8F2946A9369F3', "maxtime":maxtime.strftime("%s"), "mintime":mintime.strftime("%s")}
-  elif (maxtime is None):
-    data = {'q': query, 'type': 'tweet', 'page': page, 'perpage': perpage, 'sort_method': "-date", 'apikey': '09C43A9B270A470B8EB8F2946A9369F3', "maxtime":maxtime.strftime("%s")}
+    data = {'q': query, 'type': 'tweet', 'page': page, 'perpage': perpage, 'sort_method': "-date", 'apikey': '09C43A9B270A470B8EB8F2946A9369F3', "maxtime":maxtime.strftime("%s"), "mintime":mintime.strftime("%s"), "allow_lang":"en"}
+  elif (maxtime is not None):
+    data = {'q': query, 'type': 'tweet', 'page': page, 'perpage': perpage, 'sort_method': "-date", 'apikey': '09C43A9B270A470B8EB8F2946A9369F3', "maxtime":maxtime.strftime("%s"), "allow_lang":"en"}
   else:
-    data = {'q': query, 'type': 'tweet', 'page': page, 'perpage': perpage, 'sort_method': "-date", 'apikey': '09C43A9B270A470B8EB8F2946A9369F3'}
+    data = {'q': query, 'type': 'tweet', 'page': page, 'perpage': perpage, 'sort_method': "-date", 'apikey': '09C43A9B270A470B8EB8F2946A9369F3', "allow_lang":"en"}
   url = "http://otter.topsy.com/search.js?" + urllib.urlencode(data)
   data = urllib2.urlopen(url)
   o = json.loads(data.read())
@@ -54,8 +54,16 @@ if __name__ == "__main__":
   for movie,date in moviesAndDates:
     print "\n", movie
 
-    starting_date = get_older_date(date, 1)
-    tweets = get_all_tweets(movie, starting_date, None)
+    starting_date = get_older_date(date, 7)
+    end_date = get_older_date(date, 14)
+
+    print "Start Date:", starting_date
+    print "End Date:", end_date
+    tweets = get_all_tweets(movie, starting_date, end_date)
+
+    x = [datetime.fromtimestamp(tweet["date"]) for tweet in tweets]
+    print "Last Date found:", min(x)
+    print "Earliest Date found:", max(x)
 
     print len(tweets)
     tweetfile = "movie_tweets/"+re.sub(r'\W+', '_', movie) + "_tweets.txt"
