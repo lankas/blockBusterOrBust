@@ -20,10 +20,12 @@ from sklearn import svm, metrics
 #x, y = numpy.loadtxt("data", unpack=True)
 
 fileFreq = 'freqMovies.data'
-X = np.loadtxt(fileFreq,delimiter =',')
+data = np.loadtxt(fileFreq,delimiter =',')
+X = data[:-1]
+y = data[-1]
 
-filePerformance = 'performMovies.data'
-y = np.loadtxt(filePerformance,delimiter =',')
+#filePerformance = 'performMovies.data'
+#y = np.loadtxt(filePerformance,delimiter =',')
 
 n,d = X.shape
 
