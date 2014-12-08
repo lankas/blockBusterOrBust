@@ -18,6 +18,7 @@ from textblob import TextBlob
 import stop_words
 
 movieDates = get_movies_and_dates(sys.argv[1])
+print movieDates
 moviesFile = sys.argv[2]
 
 stopwords = stop_words.get_stop_words("english") #https://pypi.python.org/pypi/stop-words
