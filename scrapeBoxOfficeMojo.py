@@ -5,32 +5,43 @@ from bs4 import BeautifulSoup
 def toJSON(filename):
 	with open(filename, 'w') as outfile:
 		json.dump(classify(), outfile)
+		#json.dump(getMovieRevenues(), outfile)
 
 def classify():
 	movieRevenue = getMovieRevenues()
 	values = movieRevenue.values()
 	values.sort()
-	l = len(values) / 3
-	first = values[l]
-	second = values[2*l]
+	l = len(values) / 20
+
+	first = values[17*l]
+	print first
+	second = values[19*l]
+	print second
+	#l = len(values) / 2
+	#first = values[l]
 
 	for key in movieRevenue.keys():
 		v = movieRevenue[key]
 		if (v < first):
+			#print key
 			c = 0
 		elif (v < second):
+			print key
 			c = 1
 		else:
+			#print key
 			c = 2
+		#else:
+		#	c = 1
 		movieRevenue[key] = c
 	#print movieRevenue
 	return movieRevenue
 
 
 def getMovieList():
-	movies = open("movies.txt", "r")
-	movieAndDateList = [movie.strip('\n') for movie in movies]
-	movieList = [movie.split("|")[1] for movie in movieAndDateList]
+	movies = open("moviesBoxOffice.txt", "r")
+	movieList = [movie.strip('\n').strip('\r') for movie in movies]
+	#movieList = [movie.split("|")[1] for movie in movieAndDateList]
 	return movieList
 
 def getMovieRevenues():
@@ -61,7 +72,7 @@ def createUrl(search):
 	return url
 
 def scrapeUrl(url):
-	#print url
+	print url
 	try:
 		req = requests.get(url)
 	except:

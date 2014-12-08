@@ -8,10 +8,10 @@ def getMovieList():
 	return movieList
 
 
-def getData(freqname):
+def getData(freqname, revname):
 	freq_data = open(freqname)
 	freq = json.load(freq_data)
-	rev_data = open('revenue.txt')
+	rev_data = open(revname)
 	revenue = json.load(rev_data)
 	data = np.zeros((160, 181))
 	movies = getMovieList()
@@ -22,4 +22,21 @@ def getData(freqname):
 		#print movie, len(freq[movie]), rev
 		freqs.append(rev)
 		data[i] = np.array(freqs)
+	return data.astype(int)
+
+def getWeekData(freqname, revname):
+	freq_data = open(freqname)
+	freq = json.load(freq_data)
+	rev_data = open(revname)
+	revenue = json.load(rev_data)
+	data = np.zeros((160, 181))
+	movies = getMovieList()
+	for i in xrange(len(movies)):
+		movie = movies[i]
+		freqs = [int(frequency) for frequency in freq[movie]]
+		print len(freqs)
+		rev = int(revenue[movie])
+		#print movie, len(freq[movie]), rev
+		#freqs.append(rev)
+		#data[i] = np.array(freqs)
 	return data.astype(int)
