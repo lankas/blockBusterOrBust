@@ -3,7 +3,7 @@
 import sys, urllib, urllib2, json, random, locale, re
 from scrapeBoxOfficeMojo import getMovieList
 from datetime import datetime
-from dateToTimestamp import get_older_date
+from dateToTimestamp import get_older_date, get_newer_date
 
  
 def search(query, page=1, perpage=100, maxtime=None, mintime=None):
@@ -40,6 +40,44 @@ def dump_to_file(obj, outfile):
   o = open(outfile, "w")
   o.write(json.dumps(obj))
   o.close()
+
+
+def export_movie_tweets(moviesAndDates):
+  for movie,date in moviesAndDates:
+    #print "\n", movie
+
+    starting_date = get_older_date(date, 7)
+    end_date = get_older_date(date, 14)
+
+    #print "Start Date:", starting_date
+    #print "End Date:", end_date
+
+    current_start_date = starting_date 
+    tweets = []
+
+    while(current_start_date > end_date):
+      next_date = get_older_date(current_start_date, 1)
+      #print "Date Range(start - end):", current_start_date, " - ", next_date
+      tweets.extend(get_all_tweets(movie, current_start_date, next_date))
+      current_start_date = get_older_date(current_start_date, 1)
+    
+
+    x = [datetime.fromtimestamp(tweet["date"]) for tweet in tweets]
+    #print "Least Recent Tweet found:", min(x)
+    #print "Most Recent Tweet found:", max(x)
+
+    print movie,len(tweets)
+    tweetfile = "movie_tweets/"+re.sub(r'\W+', '_', movie) + "_tweets.txt"
+    #print tweetfile
+    dump_to_file(tweets, tweetfile)
+
+
+def export_movie_dir(moviesAndDates, outfile):
+  movie_files_data = dict()
+  for movie,date in moviesAndDates:
+    movie_files_data[movie] = tweetfile
+  dump_to_file(movie_files_data, outfile)
+
  
 if __name__ == "__main__":
 
@@ -50,29 +88,12 @@ if __name__ == "__main__":
   except: print "python " + sys.argv[0] + " <query keyword>"
 
   moviesAndDates = get_movies_and_dates(infile)
-  movie_files_data = dict()
-  for movie,date in moviesAndDates:
-    print "\n", movie
 
-    starting_date = get_older_date(date, 7)
-    end_date = get_older_date(date, 14)
+  #export_movie_tweets(moviesAndDates)
 
-    print "Start Date:", starting_date
-    print "End Date:", end_date
-    tweets = get_all_tweets(movie, starting_date, end_date)
+  export_movie_dir(moviesAndDates, outfile)
 
-    x = [datetime.fromtimestamp(tweet["date"]) for tweet in tweets]
-    print "Last Date found:", min(x)
-    print "Earliest Date found:", max(x)
-
-    print len(tweets)
-    tweetfile = "movie_tweets/"+re.sub(r'\W+', '_', movie) + "_tweets.txt"
-    print tweetfile
-    dump_to_file(tweets, tweetfile)
-
-    movie_files_data[movie] = tweetfile
-
-  dump_to_file(movie_files_data, outfile)
+  
 
 
   # Week before the movie comes out to 6 months before that.
