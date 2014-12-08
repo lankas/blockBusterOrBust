@@ -1,0 +1,27 @@
+Using 3-fold cross validation
+
+OneWeek PCA:
+pca_lin: 0.997 ->.995 with regularization
+pca: 0.997 ->.995 with regularization
+score (SVR): -0.1208
+squared mean error(SVR): 24793080
+r_squared (Linear Reg): 7581297 
+accuracy (SVM): .860788
+
+OneWeek:
+score (SVR): -0.1146
+squared mean error (SVR): 24843885
+r_squared (Linear Reg): 57091594160000 
+accuracy (SVM): 0.8607
+
+TwelveDays:
+score (SVR): -0.1123
+squared mean error (SVR): 24389483
+r_squared (Linear Reg): 58147812540800
+accuracy (SVM): 0.8612
+
+TwoWeekIntervals:
+score (SVR): -0.1177
+squared mean error (SVR): 24892167
+r_squared (Linear Reg): 57773717297200
+accuracy (SVM): 0.8609
