@@ -75,6 +75,7 @@ def export_movie_tweets(moviesAndDates):
 def export_movie_dir(moviesAndDates, outfile):
   movie_files_data = dict()
   for movie,date in moviesAndDates:
+    tweetfile = "movie_tweets/"+re.sub(r'\W+', '_', movie) + "_tweets.txt"
     movie_files_data[movie] = tweetfile
   dump_to_file(movie_files_data, outfile)
 
