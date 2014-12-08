@@ -13,9 +13,11 @@ def classify():
 	values.sort()
 	l = len(values) / 20
 
-	first = values[17*l]
+	#first = values[17*l]
+	first = 20000000
 	print first
-	second = values[19*l]
+	#second = values[19*l]
+	second = 60000000
 	print second
 	#l = len(values) / 2
 	#first = values[l]
