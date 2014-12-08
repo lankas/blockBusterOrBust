@@ -28,8 +28,11 @@ def tweetsToFreq(tweets, releaseTime, movie_name):
     for tweet in tweets:    
         tweet_date = datetime.fromtimestamp(tweet['date'])
         days_before_release = int((releaseTime - tweet_date).days) 
+
         if (days_before_release < 180 and days_before_release > 0): 
             freq[days_before_release-1] = freq[days_before_release-1]+1
+        else:
+            print "out of bounds"
         #could do a sanity check on the ones not in this range
     return freq
     
@@ -78,7 +81,9 @@ for movie,date in movieDates:
     text = f.read()
     tweets = json.loads(text)
     print movie,date
+    
     freq = np.array([tweetsToFreq(tweets, date, movie)])
+    print freq
     freqs = np.vstack((freqs, freq))
     
     ratio,pos_freq,neg_freq = tweetsSentiment(tweets, date, movie)
@@ -97,7 +102,16 @@ print pos_freqs
 print neg_freqs
 print ratios
 
-np.savetxt('sentout.txt', movie_key,freqs,pos_freqs,neg_freqs,ratios)
+
+out = open('tweet_vectors/movies', 'w')
+json.dump(movie_key, out)
+out.close()
+
+np.savetxt('tweet_vectors/freqs', freqs)
+np.savetxt('tweet_vectors/pos_freqs', pos_freqs)
+np.savetxt('tweet_vectors/neg_freqs', neg_freqs)
+np.savetxt('tweet_vectors/ratios', ratios)
+
   
 #for movie in allMovies[0:50]:
 
