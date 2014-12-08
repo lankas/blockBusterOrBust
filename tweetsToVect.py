@@ -61,6 +61,25 @@ def tweetsSentiment(tweets, releaseTime, movie_name):
     return ratio,pos_freq,neg_freq
     
     
+def overallTweetSentiment(tweets, releaseTime, movie_name):
+    total_pol = 0
+    total_subj = 0
+    count_tweets = 0
+    for tweet in tweets:
+        tweet_processed = removeStopWords(stopwords,tweet['text'])
+        tweet_processed = tweet_processed.replace(str(movie_name),'')  #make it ignore the actual movie title
+        blob = TextBlob(tweet_processed) 
+        polarity = blob.sentiment.polarity
+        subjectivity = blob.sentiment.subjectivity
+        
+        total_sent = total_pol + polarity
+        total_subj = total_subj + subjectivity
+        count_tweets = count_tweets + 1
+        
+    return total_sent/count_tweets,total_subj/count_tweets
+        
+    
+    
 def removeStopWords(toRemove,tweet):
     tweet = ' '.join([word for word in tweet.split() if word not in toRemove])
     return tweet
@@ -73,6 +92,9 @@ freqs = np.zeros((0,180))
 pos_freqs = np.zeros((0,180))
 neg_freqs = np.zeros((0,180))
 ratios = np.zeros((0,180))
+
+sentiments = np.zeros((0,2))
+
 movie_key = []
 
 for movie,date in movieDates:
@@ -82,35 +104,41 @@ for movie,date in movieDates:
     tweets = json.loads(text)
     print movie,date
     
-    freq = np.array([tweetsToFreq(tweets, date, movie)])
-    print freq
-    freqs = np.vstack((freqs, freq))
+    #freq = np.array([tweetsToFreq(tweets, date, movie)])
+    #print freq
+    #freqs = np.vstack((freqs, freq))
     
-    ratio,pos_freq,neg_freq = tweetsSentiment(tweets, date, movie)
-    ratio = np.array([ratio])
-    pos_freq = np.array([pos_freq])
-    neg_freq = np.array([neg_freq])
+    pol,subj = overallTweetSentiment(tweets, date, movie)
+    sent = np.array([pol,subj])
+    print sent
+    #ratio,pos_freq,neg_freq = tweetsSentiment(tweets, date, movie)
+    #ratio = np.array([ratio])
+    #pos_freq = np.array([pos_freq])
+    #neg_freq = np.array([neg_freq])
     
-    freqs = np.vstack((freqs, freq))
-    pos_freqs = np.vstack((pos_freqs, pos_freq))
-    neg_freqs = np.vstack((neg_freqs, neg_freq))
-    ratios = np.vstack((ratios, ratio))
+    sentiments = np.vstack((sentiments, sent))
+    
+    #freqs = np.vstack((freqs, freq))
+    #pos_freqs = np.vstack((pos_freqs, pos_freq))
+    #neg_freqs = np.vstack((neg_freqs, neg_freq))
+    #ratios = np.vstack((ratios, ratio))
     
 print movie_key
 print freqs
-print pos_freqs
-print neg_freqs
-print ratios
+#print pos_freqs
+#print neg_freqs
+#print ratios
 
 
 out = open('tweet_vectors/movies', 'w')
 json.dump(movie_key, out)
 out.close()
 
-np.savetxt('tweet_vectors/freqs', freqs)
-np.savetxt('tweet_vectors/pos_freqs', pos_freqs)
-np.savetxt('tweet_vectors/neg_freqs', neg_freqs)
-np.savetxt('tweet_vectors/ratios', ratios)
+np.savetxt('tweet_vectors/sentiments.txt', sentiments)
+#np.savetxt('tweet_vectors/freqs', freqs)
+#np.savetxt('tweet_vectors/pos_freqs', pos_freqs)
+#np.savetxt('tweet_vectors/neg_freqs', neg_freqs)
+#np.savetxt('tweet_vectors/ratios', ratios)
 
   
 #for movie in allMovies[0:50]:

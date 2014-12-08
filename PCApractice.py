@@ -22,15 +22,15 @@ Xt_lin = pcaTransformer.transform(lin_X)
 print "PCA lin:", sum(pca_lin.explained_variance_ratio_)
 
 lin_model = svm.SVR(C=1, epsilon=0.2, kernel='linear')
-lin_model.fit(lin_X, lin_y)
-lin_predictions = lin_model.predict(lin_X)
+lin_model.fit(Xt_lin, lin_y)
+lin_predictions = lin_model.predict(Xt_lin)
 lin_predictions = lin_predictions.astype(int)
 print lin_predictions
 lin_accuracy = metrics.accuracy_score(lin_y, lin_predictions)
 
-print lin_model.score(lin_X,lin_y)
+print lin_model.score(Xt_lin,lin_y)
 
-print np.divide((lin_y - lin_predictions).astype(float), lin_y)
+print np.sqrt(np.mean(np.square(lin_y - lin_predictions))), np.mean(lin_y)
 
 
 parameters = {'kernel':('poly','linear'), 'C':[0.001, 10], 'gamma':[0.01, 10], 'degree':[3, 5]}
