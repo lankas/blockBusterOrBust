@@ -1,7 +1,7 @@
 # scrape tweets from topsy.com
  
 import sys, urllib, urllib2, json, random, locale, re
-from scrapeBoxOfficeMojo import getMovieList
+#from scrapeBoxOfficeMojo import getMovieList
 from datetime import datetime
 from dateToTimestamp import get_older_date, get_newer_date
 
@@ -27,6 +27,13 @@ def get_movies_and_dates(infile):
   locale.setlocale(locale.LC_ALL, '')
   dateList = [datetime.strptime(date,"%x") for date in dateList]
   return zip(movieList, dateList);
+
+def getMovieList():
+	movies = open("movies.txt", "r")
+	movieList = [movie.strip('\n').strip('\r') for movie in movies]
+	movieList = [movie.split("|")[1] for movie in movieList]
+	return movieList
+
 
 def get_all_tweets(movie, startingDate, endingDate):
   all_tweets = []
