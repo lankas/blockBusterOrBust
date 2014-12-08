@@ -20,9 +20,9 @@ def search(query, page=1, perpage=100, maxtime=None, mintime=None):
   return res
 
 def get_movies_and_dates(infile):
-  movieList = getMovieList()
   f = open(infile, "r")
   movieAndDateList = [movie.strip('\n') for movie in f]
+  movieList = [movie.split("|")[1] for movie in movieAndDateList]
   dateList = [movie.split("|")[0] for movie in movieAndDateList]
   locale.setlocale(locale.LC_ALL, '')
   dateList = [datetime.strptime(date,"%x") for date in dateList]
