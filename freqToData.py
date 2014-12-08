@@ -29,14 +29,16 @@ def getWeekData(freqname, revname):
 	freq = json.load(freq_data)
 	rev_data = open(revname)
 	revenue = json.load(rev_data)
-	data = np.zeros((160, 181))
+	data = np.zeros((160, 26))
 	movies = getMovieList()
+	print freq
 	for i in xrange(len(movies)):
 		movie = movies[i]
 		freqs = [int(frequency) for frequency in freq[movie]]
-		print len(freqs)
+		#print len(freqs)
 		rev = int(revenue[movie])
-		#print movie, len(freq[movie]), rev
-		#freqs.append(rev)
-		#data[i] = np.array(freqs)
+		freqs = freqs[:25]
+		print movie, len(freq[movie]), rev
+		freqs.append(rev)
+		data[i] = np.array(freqs)
 	return data.astype(int)

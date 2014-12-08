@@ -149,8 +149,6 @@
 10/24/2014|John Wick
 10/24/2014|Ouija
 10/24/2014|St. Vincent
-11/05/2014|Interstellar
-11/07/2014|Big Hero 6
 11/14/2014|Beyond the Lights
 11/14/2014|Dumb and Dumber To
 11/14/2014|Saving Christmas
